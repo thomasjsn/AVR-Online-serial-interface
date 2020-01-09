@@ -1,6 +1,6 @@
 Report       : osid
 Date         : 01-09-2020
-Time         : 23:53:13
+Time         : 23:57:15
 
 Compiler     : BASCOM-AVR LIBRARY V 2.0.7.8
 Processor    : M8
@@ -8,10 +8,10 @@ SRAM         : 400 hex
 EEPROM       : 200 hex
 ROMSIZE      : 2000 hex
 
-ROMIMAGE     : E52 hex  -> Will fit into ROM
-ROMIMAGE     :  3666 dec
-FLASH USED   :  44  %
-BAUD         : 9600 Baud
+ROMIMAGE     : CC2 hex  -> Will fit into ROM
+ROMIMAGE     :  3266 dec
+FLASH USED   :  39  %
+BAUD         : 38400 Baud
 XTAL         : 8000000 Hz
 BAUD error   : 0.16%
 
@@ -21,7 +21,7 @@ S-Stacksize  : 10 hex
 S-Stackstart : 438 hex
 Framesize    : 20 hex
 Framestart   : 408 hex
-Space left   :  872  dec
+Space left   :  846  dec
 
 LCD DB7      : PORTB.7
 LCD DB6      : PORTB.6
@@ -90,21 +90,23 @@ COMPARE1                         Word              004A          74
 PWM1B                            Word              0048          72 
 COMPARE1B                        Word              0048          72 
 ERR                              Bit [2]           0006          6 
-LIFESIGNAL                       Integer           0060          96 
-LIFE                             Integer           0062          98 
-SEND                             String * 15       0064          100 
-INN                              Byte(9)           0074          116 
-A                                Byte              007D          125 
-A2                               String * 1        007E          126 
-SERIALCHARWAITING                Byte              0080          128 
-SERIALCHAR                       Byte              0081          129 
-COMMINPUT                        String * 15       0082          130 
-INPUT_NR                         String * 3        0092          146 
-INPUT_COM                        String * 1        0096          150 
-INPUT_UT                         String * 2        0098          152 
-INPUT_STAT                       String * 1        009B          155 
-B                                Byte              009D          157 
-LED                              Byte              009E          158 
+SEND                             String * 30       0060          96 
+STORED_ID                        EEPROM Byte       0000          0 
+SERIALCHARWAITING                Byte              007F          127 
+SERIALCHAR                       Byte              0080          128 
+COMMINPUT                        String * 9        0081          129 
+COM_VALUE                        Word              008B          139 
+COM_COM                          String * 1        008D          141 
+COM_NR                           String * 1        008F          143 
+LED                              Byte              0091          145 
+COM_STAT                         String * 4        0092          146 
+STATUS                           Byte              0097          151 
+VALUE                            Word              0098          152 
+VALUES                           String * 4        009A          154 
+ID                               Byte              009F          159 
+IDS                              String * 2        00A0          160 
+CRC                              Byte              00A3          163 
+VERINFO                          String * 20       00A4          164 
 
 --------------------------------------------------------------------------------
 Constant                         Value
@@ -461,7 +463,7 @@ _HWMUL                           1
 _DOSFILEWRITE                    0
 _DOSDIRWRITE                     0
 _1WEXT                           0
-_ADC_REFMODEL                    0
+_ADC_REFMODEL                    8
 _UARTS                           1
 _HWSTACKSTART                    1119
 _TIMEOUT                         0
@@ -473,7 +475,21 @@ _HWSTACK_LOW                     &H0437
 _SWSTACK_LOW                     &H0428
 _FRAME_HIGH                      &H0429
 _XMEGA                           0
-ID                               "002"
+_VERSION_MAJOR                   2
+_VERSION_MINOR                   0
+_VERSION_BUILD                   7
+MIN_ID                           32
+MAX_ID                           125
+PWM_MAX                          255
+OUT_MAX                          511
+STAT_MAX                         7
+STATUS_SERIAL                    "0041"
+STATUS_NAME                      "OSID"
+STATUS_VERBOOT                   "0064"
+STATUS_VERPROT                   "00D2"
+STATUS_DIO                       "0309"
+STATUS_AI                        "060A"
+STATUS_AO                        "0000"
 CBITINFINITY                     0
 CMBITINFINITY                    1
 CBITZERO                         1
@@ -538,4 +554,4 @@ ADCD                             not used
 COMPARE1                         not used
 PWM1B                            not used
 
-Source string could be too big to fit into target string [___TEMP1>A2]  in line  0 
+Source string could be too big to fit into target string [SEND>___STRBUF]  in line  0 
