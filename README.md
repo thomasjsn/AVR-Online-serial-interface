@@ -1,10 +1,21 @@
-## Source code for project: [Serial port IO module with 9 in and outputs](https://link.stdout.no/n)
+# Serial port IO module with 9 in and outputs
 
-Serial port interface with 9 inputs (6 analog) and 9 outputs, uses an AVR ATmega8 microcontroller.
+> RS232 interface module, with 9 inputs and 9 outputs. Uses an AVR ATmega8 microcontroller.
 
-![Serial port IO module with 9 in and outputs](image.jpg)
+Project documentation available at: https://cavelab.dev/wiki/Serial_port_IO_module_with_9_in_and_outputs
 
-Written in basic, using [Bascom-AVR](http://www.mcselec.com/).
+![Serial port IO module with 9 in and outputs](https://cavelab.dev/images/thumb/5/5f/Osid_17_ferdig_installert.JPG/600px-Osid_17_ferdig_installert.JPG)
 
-### Author
-[Thomas Jensen](https://thomas.stdout.no)
+Written in basic, using [BASCOM-AVR](http://www.mcselec.com/).
+
+## Author
+**Thomas Jensen**
+* Twitter: [@thomasjsn](https://twitter.com/thomasjsn)
+* Github: [@thomasjsn](https://github.com/thomasjsn)
+* Website: [cavelab.dev](https://cavelab.dev/wiki/User:Thomas)
+
+## License
+The MIT License (MIT). Please see [license file](LICENSE.txt) for more information.
+
+---
+_This README was automatically generated using the MediaWiki API_ (`pageid:335`)
